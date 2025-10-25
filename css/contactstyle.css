@@ -1,0 +1,461 @@
+/* Global Variables */
+:root {
+    --yellow: #f4a300;
+    --red: #f44336;
+    --blue: #00bcd4;
+    --gray-bg: #f2f2f2;
+    --black: #111;
+    --light-gray: #ccc;
+    --dark-gray: #777;
+}
+
+/* Basic Reset */
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body & HTML Structure */
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--gray-bg);
+    color: var(--black);
+    padding: 40px;
+    line-height: 1.6;
+}
+
+/* Header Styles - Consistent with other pages */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+    position: relative; /* Needed for absolute positioning of nav on mobile */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 600;
+    z-index: 1001; /* Ensure logo is above mobile nav */
+}
+
+.logo-dot {
+    background-color: var(--yellow);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.logo span.role {
+    font-weight: normal;
+    font-size: 14px;
+    margin-left: 8px;
+    color: var(--dark-gray);
+}
+
+/* Navigation Styles */
+nav a {
+    text-decoration: none;
+    color: var(--black);
+    margin-left: 25px;
+    font-size: 16px;
+    position: relative;
+    padding-bottom: 5px; /* Space for underline effect */
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--black);
+    left: 0;
+    bottom: 0;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Hamburger Menu Toggle */
+.menu-toggle {
+    display: none; /* Hidden by default on large screens */
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001; /* Ensure toggle is above mobile nav */
+    color: var(--black);
+}
+
+/* Main Content Area for Contact Page */
+main {
+    flex: 1; /* Allows main content to grow and push footer down */
+    padding: 40px;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: flex-start; /* Align items to the top */
+    flex-wrap: wrap;
+    gap: 60px; /* Space between info and form */
+    max-width: 1200px; /* Limit main content width */
+    margin: 0 auto; /* Center the main content block */
+}
+
+.contact-info {
+    flex: 1 1 400px; /* Flexible width, min 400px */
+    max-width: 500px;
+}
+
+.contact-info h1 {
+    font-size: 2.8rem; /* Slightly larger title */
+    margin-bottom: 20px;
+    color: var(--yellow);
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.contact-info p strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    color: var(--black);
+}
+
+.contact-form {
+    flex: 1 1 500px; /* Flexible width, min 500px for form */
+    max-width: 600px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 48%; /* For two columns */
+    margin-bottom: 20px; /* Increased margin for better spacing */
+    padding: 12px 15px; /* More padding */
+    border: 1px solid var(--light-gray); /* Lighter border */
+    border-radius: 8px; /* Rounded corners for inputs */
+    font-size: 1rem;
+    outline: none; /* Remove outline on focus */
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--yellow); /* Highlight on focus */
+}
+
+.contact-form textarea {
+    width: 100%; /* Full width for textarea */
+    height: 150px; /* Taller textarea */
+    resize: vertical; /* Allow vertical resizing only */
+}
+
+/* Adjustments for single column inputs on form */
+.contact-form input:nth-child(odd) {
+    margin-right: 4%; /* Space between two-column inputs */
+}
+
+/* Make subject full width for better flow */
+.contact-form input[name="subject"] {
+    width: 100%;
+    margin-right: 0 !important; /* Override odd child margin */
+}
+
+.submit-btn {
+    background: var(--yellow);
+    border: none;
+    padding: 14px 40px; /* Larger button */
+    border-radius: 30px; /* More rounded */
+    font-weight: bold;
+    color: var(--black); /* Text color set to black */
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    width: auto; /* Allow button to size according to content */
+    margin-top: 10px; /* Space above button */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.submit-btn:hover {
+    background: #e09200; /* Darker yellow on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+#status-message {
+    margin-top: 20px; /* Increased margin */
+    padding: 15px; /* Increased padding */
+    border-radius: 10px;
+    font-weight: bold;
+    display: none;
+    text-align: center;
+    width: 100%; /* Full width for status message */
+}
+
+.success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+.error   { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+
+/* Footer Styles - Consistent with other pages */
+footer {
+    margin-top: 80px;
+    border-top: 1px solid var(--light-gray);
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1000px;
+    margin: auto;
+    text-align: left;
+}
+
+.footer-section {
+    min-width: 150px;
+    flex: 1 1 200px;
+    /* Opacity and transform for fade-in animation, controlled by JS */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.footer-section.visible { /* Class added by JS */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.footer-section strong {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--black);
+    font-size: 1.1rem;
+}
+
+.footer-section p {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.social-icons {
+    display: flex; /* Use flex for social icons */
+    gap: 15px; /* Space between icons */
+    justify-content: flex-start; /* Align to start in desktop */
+}
+
+.social-icons a {
+    color: var(--black);
+    font-size: 22px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--yellow);
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--dark-gray);
+}
+
+.footer-bottom a {
+    color: var(--black);
+    text-decoration: underline;
+}
+
+/* Preloader Styles */
+#preloader {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.4s ease;
+}
+
+.loader {
+    font-size: 48px;
+    animation: bounce 1.2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Back to Top Button Styles */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 0.7rem 1.1rem;
+    background: var(--yellow);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 4px 10px rgba(202, 241, 223, 0.25);
+    transition: background 0.3s ease, transform 0.2s ease;
+    line-height: 1;
+}
+
+#backToTop:hover {
+    background: #e09200;
+    transform: translateY(-3px);
+}
+
+/* Responsive Adjustments (Media Queries) */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+    header {
+        margin-bottom: 40px;
+        flex-wrap: wrap; /* Allow wrapping for logo and toggle */
+    }
+    .logo {
+        flex-grow: 1; /* Allow logo to take more space */
+    }
+    .menu-toggle {
+        display: block; /* Show hamburger menu */
+        order: 2; /* Place toggle after logo */
+        margin-left: auto; /* Push toggle to the right */
+    }
+    nav {
+        display: none; /* Hide navigation by default */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Below the header */
+        left: 0;
+        width: 100%;
+        background-color: #fff; /* White background for menu */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        padding: 20px 0; /* Adjusted padding */
+        border-top: 1px solid var(--light-gray);
+        z-index: 1000;
+    }
+    nav.active {
+        display: flex; /* Show navigation when active */
+    }
+    nav a {
+        margin: 15px 0; /* More vertical space for links */
+        text-align: center;
+        color: var(--black); /* Ensure links are visible */
+    }
+
+    main {
+        flex-direction: column; /* Stack content vertically */
+        padding: 20px;
+        gap: 40px; /* Space between contact info and form */
+    }
+    .contact-info, .contact-form {
+        width: 100%; /* Full width for mobile */
+        min-width: unset;
+        max-width: unset;
+    }
+    .contact-info h1 {
+        font-size: 2.2rem;
+        text-align: center; /* Center contact title */
+    }
+    .contact-info p {
+        text-align: center; /* Center contact info paragraphs */
+    }
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%; /* All inputs full width */
+        margin-right: 0 !important; /* Ensure no unwanted margin */
+    }
+    .submit-btn {
+        width: 100%; /* Make button full width */
+    }
+    footer .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-section {
+        text-align: center;
+        width: 100%;
+    }
+    .social-icons {
+        justify-content: center; /* Center social icons on mobile */
+        margin-bottom: 15px; /* Add space below icons */
+    }
+    #backToTop {
+        bottom: 20px;
+        right: 20px;
+        padding: 0.6rem 1rem;
+        font-size: 1.3rem;
+    }
+}
+
+/* Further small screen adjustments */
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+    header {
+        margin-bottom: 30px;
+    }
+    .logo {
+        font-size: 18px;
+    }
+    .logo span.role {
+        font-size: 12px;
+    }
+    main {
+        padding: 15px;
+    }
+    .contact-info h1 {
+        font-size: 2rem;
+    }
+    .contact-info p {
+        font-size: 1rem;
+    }
+    .contact-form {
+        padding: 20px;
+    }
+    .contact-form input, .contact-form textarea {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+    .submit-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+    footer {
+        padding: 20px 10px;
+    }
+    .footer-bottom {
+        margin-top: 20px;
+    }
+}

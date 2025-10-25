@@ -1,0 +1,411 @@
+     /* Global Variables */
+        :root {
+            --yellow: #f4a300;
+            --red: #f44336;
+            --blue: #00bcd4;
+            --gray-bg: #f2f2f2;
+            --black: #111;
+            --light-gray: #ccc;
+            --dark-gray: #777;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        /* Body Styles */
+        body {
+            background-color: var(--gray-bg);
+            color: var(--black);
+            padding: 40px;
+            line-height: 1.6; /* Enhance readability */
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            font-weight: 600;
+            z-index: 1001;
+        }
+
+        .logo-dot {
+            background-color: var(--yellow);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .logo span.role {
+            font-weight: normal;
+            font-size: 14px;
+            margin-left: 8px;
+            color: var(--dark-gray);
+        }
+
+        /* Navigation Styles */
+        nav a {
+            text-decoration: none;
+            color: var(--black);
+            margin-left: 25px;
+            font-size: 16px;
+            position: relative;
+            padding-bottom: 5px; /* Space for underline */
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--black);
+            left: 0;
+            bottom: 0;
+            transition: 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hamburger Menu Toggle */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1001;
+            color: var(--black); /* Ensure color is visible */
+        }
+
+        /* Main Content Area */
+        main {
+            padding: 0 2rem; /* Adjusted padding for main content */
+            max-width: 1200px; /* Limit content width */
+            margin: 0 auto; /* Center the content */
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--yellow); /* Apply defined variable color */
+            text-align: center; /* Center the main title */
+        }
+
+        /* Project Cards Styling */
+        .project {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 50px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+            padding: 30px; /* Increased padding */
+            border-radius: 15px; /* More rounded corners */
+            background-color: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for shadow */
+            opacity: 0; /* Hidden by default for fade-in effect */
+            transform: translateY(20px); /* Slightly moved down for fade-in */
+        }
+
+        .project.visible { /* Class added by JS for fade-in */
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .project:hover {
+            transform: translateY(-8px); /* More pronounced lift on hover */
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+        }
+
+        .project-text,
+        .project-img {
+            flex: 1 1 45%; /* Adjusted flex basis for better distribution */
+            padding: 20px;
+            min-width: 300px; /* Ensure content doesn't shrink too much */
+        }
+
+        .project-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .project-text p {
+            font-size: 1.1rem; /* Slightly larger text for readability */
+            color: #444; /* Darker gray for text */
+        }
+
+        .project-img {
+            text-align: center;
+        }
+
+        .project-img img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px; /* Consistent border-radius */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-img img:hover {
+            transform: scale(1.02); /* Slightly less aggressive zoom on image hover */
+        }
+
+        /* Footer Styles */
+        footer {
+            margin-top: 80px;
+            border-top: 1px solid var(--light-gray);
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            max-width: 1000px;
+            margin: auto;
+            text-align: left; /* Align text left within footer sections */
+        }
+
+        .footer-section {
+            min-width: 150px;
+            flex: 1 1 200px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .footer-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .footer-section strong {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--black); /* Make strong text more prominent */
+            font-size: 1.1rem;
+        }
+
+        .footer-section p {
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .social-icons a {
+            color: var(--black);
+            margin-right: 15px;
+            font-size: 22px; /* Slightly larger social icons */
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--yellow); /* Hover effect for social icons */
+        }
+
+        .footer-bottom {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 14px;
+            color: var(--dark-gray);
+        }
+
+        .footer-bottom a {
+            color: var(--black);
+            text-decoration: underline;
+        }
+
+        /* Back to Top Button */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 0.7rem 1.1rem; /* Slightly larger button */
+            background: var(--yellow); /* Use defined variable */
+            border: none;
+            border-radius: 50%; /* Make it perfectly round */
+            color: #fff;
+            font-size: 1.5rem; /* Larger arrow */
+            cursor: pointer;
+            display: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* Enhanced shadow */
+            transition: background 0.3s ease, transform 0.2s ease;
+            line-height: 1; /* Center the arrow vertically */
+        }
+
+        #backToTop:hover {
+            background: #e09200; /* Darker yellow on hover */
+            transform: translateY(-3px); /* Slight lift */
+        }
+
+        /* Preloader Styles */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.4s ease;
+        }
+
+        .loader {
+            font-size: 48px;
+            animation: bounce 1.2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Responsive Adjustments (Media Queries) */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+
+            header {
+                margin-bottom: 40px;
+                flex-wrap: wrap; /* Allow wrapping for logo and toggle */
+            }
+
+            .logo {
+                flex-grow: 1; /* Allow logo to take more space */
+            }
+
+            .menu-toggle {
+                display: block; /* Show hamburger menu */
+                order: 2; /* Place toggle after logo */
+                margin-left: auto; /* Push toggle to the right */
+            }
+
+            nav {
+                display: none; /* Hide navigation by default */
+                flex-direction: column;
+                position: absolute;
+                top: 100%; /* Below the header */
+                left: 0;
+                width: 100%;
+                background-color: #fff; /* White background for menu */
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+                padding: 20px 0; /* Adjusted padding */
+                border-top: 1px solid var(--light-gray);
+                z-index: 1000;
+            }
+
+            nav.active {
+                display: flex; /* Show navigation when active */
+            }
+
+            nav a {
+                margin: 15px 0; /* More vertical space for links */
+                text-align: center;
+                color: var(--black); /* Ensure links are visible */
+            }
+
+            h1 {
+                font-size: 2rem; /* Smaller main title on mobile */
+            }
+
+            .project {
+                flex-direction: column; /* Stack project items vertically */
+                text-align: center;
+                padding: 20px;
+            }
+
+            .project-text,
+            .project-img {
+                padding: 10px;
+                min-width: unset; /* Remove min-width for mobile */
+            }
+
+            .project-text h2 {
+                font-size: 1.7rem; /* Smaller project titles */
+            }
+
+            .project-text p {
+                font-size: 1rem; /* Smaller project description text */
+            }
+
+            .footer-container {
+                flex-direction: column; /* Stack footer sections vertically */
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-section {
+                text-align: center; /* Center text within footer sections on mobile */
+                width: 100%; /* Full width */
+            }
+
+            .social-icons a {
+                margin: 0 10px; /* Adjust spacing for social icons */
+            }
+
+            #backToTop {
+                bottom: 20px;
+                right: 20px;
+                padding: 0.6rem 1rem;
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Further small screen adjustments */
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+            header {
+                margin-bottom: 30px;
+            }
+            .logo {
+                font-size: 18px;
+            }
+            .logo span.role {
+                font-size: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+            }
+            .project {
+                padding: 15px;
+                margin-bottom: 30px;
+            }
+            .project-text h2 {
+                font-size: 1.5rem;
+            }
+            .project-text p {
+                font-size: 0.95rem;
+            }
+            footer {
+                padding: 20px 10px;
+            }
+            .footer-bottom {
+                margin-top: 20px;
+            }
+        }

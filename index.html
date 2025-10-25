@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ayham AlMazyad - Portfolio</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/homecss.css">
+  <meta property="og:image" content="https://myportfolio.syria-cloud.info/img/home.PNG" />
+
+</head>
+<body>
+<div id="preloader">
+  <div class="loader">🚀</div>
+</div>
+
+  <header>
+    <div class="logo">
+      <div class="logo-dot"></div> Ayham AlMazyad <span class="role">Front-End Developer</span>
+    </div>
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+    <nav id="main-nav">
+      <a href="resum.html">Resume</a>
+      <a href="lvb2.html">Projects</a>
+      <a href="telegram-form/contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="main">
+    <div class="profile-img">
+      <img src="./img/logo1.png" alt="Profile" />
+    </div>
+    <div class="info">
+      <h1>Hello</h1>
+      <h3>A Bit About Me</h3>
+      <p>
+        About Me
+        I am Ayham AlMazyad, an 18-year-old Front-End Developer from Syria, specializing in building modern, responsive, and high-performance web interfaces. I have strong experience with HTML, CSS, and JavaScript, with a keen eye for detail and usability. Passionate about writing clean, maintainable code and delivering exceptional user experiences, I am committed to continuous learning and staying up to date with the latest web technologies. In addition to my professional skills, I enjoy exploring technical and programming hobbies that help me broaden my knowledge and stay creative.
+      </p>
+      <div class="buttons">
+        <a href="resum.html" class="resume">Resume</a>
+        <a href="lvb2.html" class="projects">Projects</a>
+        <a href="telegram-form/contact.html" class="contact">Contact</a>
+      </div>
+    </div>
+  </div>
+  
+  <footer style="margin-top: 80px; border-top: 1px solid #ccc; padding: 40px 20px 20px;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 30px;">
+      
+      <div style="min-width: 150px;">
+        <strong>Phone</strong>
+        <p>+963 945 555 925</p>
+      </div>
+
+      <div style="min-width: 150px;">
+        <strong>Email</strong>
+        <p>ayhamalmazyad@gmail.com</p>
+      </div>
+
+      <div style="min-width: 150px;">
+            <strong>Follow Me</strong>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/ayham.mziad" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://github.com/Aeham-sys" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/ayhambmz/profilecard/?igsh=MWZ1MnQzeTI5YWZlNA==" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/ayham-al-mziad?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 40px; text-align: center; font-size: 14px; color: #777;">
+      © 2025 By Ayham AlMazyad.  
+    </div>
+  </footer>
+  <script>
+  window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    preloader.style.opacity = '0';
+    setTimeout(() => { preloader.style.display = 'none'; }, 400);
+  });
+
+  const menuToggle = document.getElementById('menu-toggle');
+  const mainNav = document.getElementById('main-nav');
+
+  menuToggle.addEventListener('click', () => {
+    mainNav.classList.toggle('active');
+  });
+  </script>
+</body>
+</html>
