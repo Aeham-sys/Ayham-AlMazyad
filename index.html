@@ -2,92 +2,356 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ayham AlMazyad - Portfolio</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./css/homecss.css">
-  <meta property="og:image" content="https://myportfolio.syria-cloud.info/img/home.PNG" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ayham AlMazyad - Front-End Developer from Syria specializing in React, Next.js, and Tailwind CSS. Explore my portfolio, skills, and projects.">
+  <meta name="keywords" content="Ayham AlMazyad, Front-End Developer, Web Developer, React Developer, Syria, Portfolio, Web Design, Next.js, Tailwind CSS">
+  <meta name="author" content="Ayham AlMazyad">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://myportfolio.syria-cloud.info/index.html">
+  <title>Ayham AlMazyad | Front-End Developer Portfolio</title>
+  
+  <!-- SEO & Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ayham AlMazyad | Front-End Developer Portfolio" />
+  <meta property="og:description" content="Discover modern, responsive web interfaces crafted with React and Next.js by Ayham AlMazyad." />
+  <meta property="og:image" content="https://myportfolio.syria-cloud.info/img/logo1.png" />
+  <meta property="og:url" content="https://myportfolio.syria-cloud.info/index.html" />
+  <meta property="og:site_name" content="Ayham AlMazyad Portfolio">
+  
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ayham AlMazyad | Front-End Developer Portfolio">
+  <meta name="twitter:description" content="Front-End Developer from Syria specializing in modern, responsive web interfaces.">
+  <meta name="twitter:image" content="https://myportfolio.syria-cloud.info/img/logo1.png">
 
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ayham AlMazyad",
+    "url": "https://myportfolio.syria-cloud.info/index.html",
+    "jobTitle": "Front-End Developer",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Homs",
+      "addressCountry": "Syria"
+    },
+    "sameAs": [
+      "https://github.com/Aeham-sys",
+      "https://www.linkedin.com/in/ayham-al-mziad",
+      "https://www.facebook.com/ayham.mziad",
+      "https://www.instagram.com/ayhambmz"
+    ],
+    "description": "Front-End Developer from Syria specializing in modern, responsive web interfaces with React, Next.js, and Tailwind CSS."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Ayham AlMazyad Portfolio",
+    "url": "https://myportfolio.syria-cloud.info/index.html"
+  }
+  </script>
+  
+  <!-- Fonts & Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- Custom Premium Stylesheet -->
+  <link rel="stylesheet" href="./css/premium-theme.css">
 </head>
 <body>
-<div id="preloader">
-  <div class="loader">🚀</div>
-</div>
 
-  <header>
-    <div class="logo">
-      <div class="logo-dot"></div> Ayham AlMazyad <span class="role">Front-End Developer</span>
+  <!-- Custom Cursor -->
+  <div class="custom-cursor" id="custom-cursor"></div>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader-pulse"></div>
+  </div>
+
+  <!-- Background Effect -->
+  <div class="bg-mesh"></div>
+
+  <!-- Header & Navigation -->
+  <header id="header">
+    <div class="container">
+      <a href="#" class="logo">
+        <div class="logo-dot"></div>
+        Ayham
+      </a>
+      
+      <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      
+      <nav class="nav-links">
+        <div class="dropdown">
+          <a href="#hero" class="active"><i class="fas fa-house" style="font-size: 0.85em;"></i>Home <i class="fas fa-chevron-down" style="font-size: 0.7em; margin-left: 2px;"></i></a>
+          <div class="dropdown-content">
+            <a href="#about"><i class="fas fa-user"></i> About</a>
+            <a href="#skills"><i class="fas fa-code"></i> Skills</a>
+            <a href="#certificates"><i class="fas fa-certificate"></i> Certificates</a>
+          </div>
+        </div>
+        <a href="resume.html"><i class="fas fa-file-lines" style="font-size: 0.85em;"></i>Resume</a>
+        <a href="projects.html"><i class="fas fa-project-diagram" style="font-size: 0.85em;"></i>Projects</a>
+        <a href="contact.html" class="contact-link"><i class="fas fa-paper-plane" style="font-size: 0.85em;"></i>Contact</a>
+      </nav>
     </div>
-    <div class="menu-toggle" id="menu-toggle">
-      <i class="fas fa-bars"></i>
-    </div>
-    <nav id="main-nav">
-      <a href="resum.html">Resume</a>
-      <a href="lvb2.html">Projects</a>
-      <a href="telegram-form/contact.html">Contact</a>
-    </nav>
   </header>
 
-  <div class="main">
-    <div class="profile-img">
-      <img src="./img/logo1.png" alt="Profile" />
-    </div>
-    <div class="info">
-      <h1>Hello</h1>
-      <h3>A Bit About Me</h3>
-      <p>
-        About Me
-        I am Ayham AlMazyad, an 18-year-old Front-End Developer from Syria, specializing in building modern, responsive, and high-performance web interfaces. I have strong experience with HTML, CSS, and JavaScript, with a keen eye for detail and usability. Passionate about writing clean, maintainable code and delivering exceptional user experiences, I am committed to continuous learning and staying up to date with the latest web technologies. In addition to my professional skills, I enjoy exploring technical and programming hobbies that help me broaden my knowledge and stay creative.
-      </p>
-      <div class="buttons">
-        <a href="resum.html" class="resume">Resume</a>
-        <a href="lvb2.html" class="projects">Projects</a>
-        <a href="telegram-form/contact.html" class="contact">Contact</a>
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero section-padding">
+      <div class="container">
+        <div class="hero-content reveal">
+          <span class="hero-subtitle">Hello, I am</span>
+          <h1 class="hero-title">Ayham AlMazyad</h1>
+          <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">
+            I'm a <span class="hero-typewriter"></span>
+          </h2>
+          <p class="hero-description">
+            Front-End Developer from Syria, crafting modern web experiences with <span class="highlight">React, Next.js & Tailwind CSS</span> — where clean code meets great design.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="projects.html" class="btn btn-primary"><i class="fas fa-arrow-right" style="margin-right: 8px;"></i>View My Work</a>
+            <a href="resume.html" class="btn btn-outline"><i class="fas fa-file-lines" style="margin-right: 8px;"></i>My Resume</a>
+          </div>
+        </div>
+        
+        <div class="hero-image-container reveal" style="transition-delay: 0.2s;">
+          <div class="orb orb-1"></div>
+          <div class="orb orb-2"></div>
+          <img src="./img/logo1.png" alt="Ayham AlMazyad" class="hero-image" />
+        </div>
       </div>
-    </div>
-  </div>
-  
-  <footer style="margin-top: 80px; border-top: 1px solid #ccc; padding: 40px 20px 20px;">
-    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 30px;">
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section-padding">
+      <div class="container">
+        <h2 class="section-title reveal">About Me</h2>
+        
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>
+              Hi, I'm <span class="highlight">Ayham Almazyad</span> — a Front-End Developer focused on building modern, high-quality web experiences using <span class="highlight">React, Next.js, and Tailwind CSS</span>.
+            </p>
+            <p>
+              I'm currently deepening my expertise in these frameworks while staying ahead of the curve — exploring the intersection of Front-End development and <span class="highlight">AI</span> to build smarter, more impactful digital products.
+            </p>
+            <p>
+              I don't just write code — I care about the details that make an interface feel right. Every project I build pushes me to think sharper, move faster, and deliver better.
+            </p>
+            <p style="font-weight: 600; color: var(--accent-cyan); letter-spacing: 0.5px;">
+              Always learning. Always shipping.
+            </p>
+
+            <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem;"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i>Get In Touch</a>
+          </div>
+          
+          <div class="skills-container reveal" style="transition-delay: 0.2s;" id="skills">
+            <h3 style="margin-bottom: 1.5rem; color: var(--text-main);">My Skills</h3>
+            
+            <div class="skill-item">
+              <div class="skill-info">
+                <span><i class="fab fa-html5" style="margin-right: 6px; color: var(--accent-cyan);"></i>HTML5</span>
+                <span>90%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+            </div>
+            
+            <div class="skill-item">
+              <div class="skill-info">
+                <span><i class="fab fa-css3-alt" style="margin-right: 6px; color: var(--accent-cyan);"></i>CSS3 (Flexbox/Grid/Animations)</span>
+                <span>90%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+            </div>
+            
+            <div class="skill-item">
+              <div class="skill-info">
+                <span><i class="fab fa-js" style="margin-right: 6px; color: var(--accent-cyan);"></i>JavaScript (ES6+)</span>
+                <span>75%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
+            </div>
+            
+            <div class="skill-item">
+              <div class="skill-info">
+                <span><i class="fas fa-mobile-screen" style="margin-right: 6px; color: var(--accent-cyan);"></i>Responsive Web Design</span>
+                <span>90%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+            </div>
+            
+            <div class="skill-item">
+              <div class="skill-info">
+                <span><i class="fab fa-git-alt" style="margin-right: 6px; color: var(--accent-cyan);"></i>Git / GitHub</span>
+                <span>75%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
+            </div>
+            
+            <div class="skill-item">
+              <div class="skill-info">
+                <span><i class="fab fa-react" style="margin-right: 6px; color: var(--accent-cyan);"></i>React.js</span>
+                <span>78%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" style="width: 78%;"></div></div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="section-padding">
+      <div class="container">
+        <h2 class="section-title reveal">My Certificates</h2>
+        <p style="text-align: center; color: var(--text-muted); margin-bottom: 3rem;" class="reveal">Professional certifications and achievements</p>
+        
+        <div class="certificates-grid">
+          <!-- Certificate 1 -->
+          <div class="certificate-card reveal">
+            <div class="certificate-image">
+              <img src="./img/techsf.PNG" alt="Technical Support Fundamentals Certificate">
+            </div>
+            <div class="certificate-content">
+              <h3>Technical Support Fundamentals (Google)</h3>
+              <p class="certificate-description">
+                A beginner-friendly course that builds a strong foundation in IT support. It covers essential computer hardware, software, troubleshooting techniques, and customer service skills needed to start a career in technical support.
+              </p>
+              <div class="certificate-meta">
+                <span class="certificate-date"><i class="far fa-calendar"></i> Nov 15, 2025</span>
+                <a href="https://coursera.org/verify/MAWNRXR6J2VS" class="verify-link" target="_blank">
+                  <i class="fas fa-certificate"></i> Verify
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certificate 2 -->
+          <div class="certificate-card reveal" style="transition-delay: 0.1s;">
+            <div class="certificate-image">
+              <img src="./img/bits.PNG" alt="Computer Networking Certificate">
+            </div>
+            <div class="certificate-content">
+              <h3>The Bits and Bytes of Computer Networking (Google)</h3>
+              <p class="certificate-description">
+                An introductory course that explains how computer networks work, from basic protocols and network layers to routers, switches, and troubleshooting. Ideal for anyone looking to understand the core principles of modern networking.
+              </p>
+              <div class="certificate-meta">
+                <span class="certificate-date"><i class="far fa-calendar"></i> Nov 25, 2025</span>
+                <a href="https://coursera.org/verify/P1MVNRF85F58" class="verify-link" target="_blank">
+                  <i class="fas fa-certificate"></i> Verify
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certificate 3 -->
+          <div class="certificate-card reveal" style="transition-delay: 0.2s;">
+            <div class="certificate-image">
+              <img src="./img/Gen.PNG" alt="Generative AI Certificate">
+            </div>
+            <div class="certificate-content">
+              <h3>Generative AI for Data Science with Copilot (Microsoft)</h3>
+              <p class="certificate-description">
+                A practical course that explores how generative AI tools—especially GitHub Copilot—enhance data science workflows. Learn how to accelerate coding, automate tasks, and generate insights using AI-powered assistance.
+              </p>
+              <div class="certificate-meta">
+                <span class="certificate-date"><i class="far fa-calendar"></i> Jan 25, 2025</span>
+                <a href="https://coursera.org/verify/5SNIGVZ3HT3Q" class="verify-link" target="_blank">
+                  <i class="fas fa-certificate"></i> Verify
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certificate 4 -->
+          <div class="certificate-card reveal" style="transition-delay: 0.3s;">
+            <div class="certificate-image">
+              <img src="./img/markiting.PNG" alt="Social Media Marketing Certificate">
+            </div>
+            <div class="certificate-content">
+              <h3>Introduction to Social Media Marketing (Meta)</h3>
+              <p class="certificate-description">
+                A comprehensive introduction to building a brand's presence on social media. This course covers marketing strategy, content creation, analytics, and best practices for engaging audiences across major platforms.
+              </p>
+              <div class="certificate-meta">
+                <span class="certificate-date"><i class="far fa-calendar"></i> Jan 29, 2025</span>
+                <a href="https://coursera.org/verify/VUBL02FN14LG" class="verify-link" target="_blank">
+                  <i class="fas fa-certificate"></i> Verify
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certificate 5 -->
+          <div class="certificate-card reveal" style="transition-delay: 0.4s;">
+            <div class="certificate-image">
+              <img src="./img/git.PNG" alt="Git and GitHub Certificate">
+            </div>
+            <div class="certificate-content">
+              <h3>Getting Started with Git and GitHub (IBM)</h3>
+              <p class="certificate-description">
+                A hands-on course that teaches the fundamentals of version control using Git and GitHub. Learn how to track changes, collaborate on projects, manage repositories, and work efficiently in modern development environments.
+              </p>
+              <div class="certificate-meta">
+                <span class="certificate-date"><i class="far fa-calendar"></i> Sep 27, 2025</span>
+                <a href="https://coursera.org/verify/XLEJCWPK1E5Y" class="verify-link" target="_blank">
+                  <i class="fas fa-certificate"></i> Verify
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content reveal">
+        <div class="footer-col">
+          <a href="#" class="logo" style="margin-bottom: 1rem;">
+            <div class="logo-dot"></div>
+            Ayham
+          </a>
+          <p>Front-End Developer specializing in building modern interfaces and seamless user experiences.</p>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <p><i class="fas fa-envelope" style="color: var(--accent-cyan); margin-right: 8px;"></i> ayhamalmazyad@gmail.com</p>
+          <p><i class="fas fa-phone" style="color: var(--accent-cyan); margin-right: 8px;"></i> +963 945 555 925</p>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Social Media</h4>
+          <div class="social-icons">
+            <a href="https://github.com/Aeham-sys" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/ayham-al-mziad" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.facebook.com/ayham.mziad" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/ayhambmz" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
       
-      <div style="min-width: 150px;">
-        <strong>Phone</strong>
-        <p>+963 945 555 925</p>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Ayham AlMazyad. All Rights Reserved.</p>
       </div>
-
-      <div style="min-width: 150px;">
-        <strong>Email</strong>
-        <p>ayhamalmazyad@gmail.com</p>
-      </div>
-
-      <div style="min-width: 150px;">
-            <strong>Follow Me</strong>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/ayham.mziad" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://github.com/Aeham-sys" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.instagram.com/ayhambmz/profilecard/?igsh=MWZ1MnQzeTI5YWZlNA==" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/ayham-al-mziad?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-      </div>
-    </div>
-
-    <div style="margin-top: 40px; text-align: center; font-size: 14px; color: #777;">
-      © 2025 By Ayham AlMazyad.  
     </div>
   </footer>
-  <script>
-  window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
-    preloader.style.opacity = '0';
-    setTimeout(() => { preloader.style.display = 'none'; }, 400);
-  });
 
-  const menuToggle = document.getElementById('menu-toggle');
-  const mainNav = document.getElementById('main-nav');
-
-  menuToggle.addEventListener('click', () => {
-    mainNav.classList.toggle('active');
-  });
-  </script>
+  <!-- Main Animation Scripts -->
+  <script src="./js/animations.js"></script>
 </body>
 </html>

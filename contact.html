@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Get in touch with Ayham AlMazyad, a Front-End Developer. Send a message for collaborations, inquiries, or any questions.">
+    <meta name="keywords" content="Ayham AlMazyad, Contact, Web Developer, Syria, Collaboration, Freelance">
+    <meta name="author" content="Ayham AlMazyad">
+    <link rel="canonical" href="https://myportfolio.syria-cloud.info/contact.html">
+    <title>Contact | Ayham AlMazyad</title>
+
+    <!-- SEO & Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contact | Ayham AlMazyad" />
+    <meta property="og:description" content="Have a project or a question? Reach out to Ayham AlMazyad via the contact form." />
+    <meta property="og:image" content="https://myportfolio.syria-cloud.info/img/logo1.png" />
+    <meta property="og:url" content="https://myportfolio.syria-cloud.info/contact.html" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Contact | Ayham AlMazyad">
+    <meta name="twitter:description" content="Get in touch with Ayham AlMazyad for web development inquiries.">
+    <meta name="twitter:image" content="https://myportfolio.syria-cloud.info/img/logo1.png">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom Premium Stylesheets -->
+    <link rel="stylesheet" href="./css/premium-theme.css">
+    <link rel="stylesheet" href="./css/contact.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="custom-cursor"></div>
+
+    <!-- Background Effect -->
+    <div class="bg-mesh"></div>
+
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-dot"></div>
+                Ayham
+            </a>
+            
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav class="nav-links">
+                <div class="dropdown">
+                    <a href="index.html#hero"><i class="fas fa-house" style="font-size: 0.85em;"></i>Home <i class="fas fa-chevron-down" style="font-size: 0.7em; margin-left: 2px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="index.html#about"><i class="fas fa-user"></i> About</a>
+                        <a href="index.html#skills"><i class="fas fa-code"></i> Skills</a>
+                        <a href="index.html#certificates"><i class="fas fa-certificate"></i> Certificates</a>
+                    </div>
+                </div>
+                <a href="resume.html"><i class="fas fa-file-lines" style="font-size: 0.85em;"></i>Resume</a>
+                <a href="projects.html"><i class="fas fa-project-diagram" style="font-size: 0.85em;"></i>Projects</a>
+                <a href="contact.html" class="active"><i class="fas fa-paper-plane" style="font-size: 0.85em;"></i>Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="contact-header reveal">
+            <div class="container">
+                <h1 class="section-title">Get In Touch</h1>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Have a project in mind, a question, or just want to say hi? I'd love to hear from you. Drop a message below!</p>
+            </div>
+        </div>
+
+        <section class="container">
+            <div class="contact-grid">
+                
+                <!-- Contact Info Block -->
+                <div class="contact-info reveal">
+                    <h2 style="font-size: 1.75rem; margin-bottom: 2rem; color: var(--text-main);">Contact Information</h2>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-info-text">
+                            <h3>Location</h3>
+                            <p>Syria</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon"><i class="fas fa-phone"></i></div>
+                        <div class="contact-info-text">
+                            <h3>Phone Number</h3>
+                            <p>+963 945 555 925</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-info-text">
+                            <h3>Email Address</h3>
+                            <p>ayhamalmazyad@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form Block -->
+                <div class="contact-form-container reveal" style="transition-delay: 0.2s;">
+                    <form id="contactForm">
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <input type="text" name="firstName" placeholder="First Name *" required />
+                                <i class="fas fa-user input-icon"></i>
+                            </div>
+
+                            <div class="input-group">
+                                <input type="text" name="lastName" placeholder="Last Name *" required />
+                                <i class="fas fa-user input-icon"></i>
+                            </div>
+
+                            <div class="input-group full-width">
+                                <input type="email" name="email" placeholder="Email Address *" required />
+                                <i class="fas fa-envelope input-icon"></i>
+                            </div>
+
+                            <div class="input-group full-width">
+                                <input type="text" name="subject" placeholder="Subject" />
+                                <i class="fas fa-tag input-icon"></i>
+                            </div>
+
+                            <div class="input-group full-width">
+                                <textarea name="message" placeholder="Your Message *" required></textarea>
+                                <i class="fas fa-comment-dots input-icon"></i>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            Send Message <i class="fas fa-paper-plane"></i>
+                        </button>
+                        <div id="status-message"></div>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content reveal">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="margin-bottom: 1rem;">
+                        <div class="logo-dot"></div>
+                        Ayham
+                    </a>
+                    <p>Front-End Developer specializing in building modern interfaces and seamless user experiences.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-envelope" style="color: var(--accent-cyan); margin-right: 8px;"></i> ayhamalmazyad@gmail.com</p>
+                    <p><i class="fas fa-phone" style="color: var(--accent-cyan); margin-right: 8px;"></i> +963 945 555 925</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Social Media</h4>
+                    <div class="social-icons">
+                        <a href="https://github.com/Aeham-sys" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/ayham-al-mziad" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/ayham.mziad" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/ayhambmz" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ayham AlMazyad. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/animations.js"></script>
+    <script src="./js/contact.js"></script>
+</body>
+</html>
