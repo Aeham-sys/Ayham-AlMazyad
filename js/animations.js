@@ -1,4 +1,58 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const THEME_KEY = 'ayham-theme';
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('theme-toggle');
+    const systemThemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    const getSystemTheme = () => (systemThemeQuery.matches ? 'dark' : 'light');
+    const getStoredTheme = () => {
+        const value = localStorage.getItem(THEME_KEY);
+        return value === 'dark' || value === 'light' ? value : null;
+    };
+
+    const updateThemeIcon = (theme) => {
+        if (!themeToggle) return;
+        const icon = themeToggle.querySelector('i');
+        if (!icon) return;
+
+        icon.classList.toggle('fa-moon', theme === 'dark');
+        icon.classList.toggle('fa-sun', theme === 'light');
+    };
+
+    const applyTheme = (theme, shouldPersist) => {
+        root.setAttribute('data-theme', theme);
+        updateThemeIcon(theme);
+
+        if (shouldPersist) {
+            localStorage.setItem(THEME_KEY, theme);
+        }
+
+        window.dispatchEvent(new CustomEvent('themechange', { detail: { theme } }));
+    };
+
+    applyTheme(getStoredTheme() || getSystemTheme(), false);
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = root.getAttribute('data-theme') || getSystemTheme();
+            const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(nextTheme, true);
+        });
+    }
+
+    const handleSystemThemeChange = () => {
+        if (!getStoredTheme()) {
+            applyTheme(getSystemTheme(), false);
+        }
+    };
+
+    if (systemThemeQuery.addEventListener) {
+        systemThemeQuery.addEventListener('change', handleSystemThemeChange);
+    } else {
+        systemThemeQuery.addListener(handleSystemThemeChange);
+    }
+
     // 1. Mobile Menu Toggle
     const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.querySelector('.nav-links');
@@ -136,14 +190,44 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(el);
     });
 
-    // 6. Preloader removal
+    const startThreeBackground = () => {
+        const hasThreeEnabled = document.body.dataset.three === 'on';
+        if (!hasThreeEnabled || reducedMotionQuery.matches) {
+            return;
+        }
+
+        import('./js/three-bootstrap.js')
+            .then((module) => {
+                module.initThreeBackground();
+            })
+            .catch(() => {
+                // Keep graceful fallback to CSS background when module import fails.
+            });
+    };
+
+    // 6. Preloader removal + Three.js bootstrap
     const preloader = document.getElementById('preloader');
     if (preloader) {
         window.addEventListener('load', () => {
             preloader.style.opacity = '0';
             setTimeout(() => {
                 preloader.style.display = 'none';
+                startThreeBackground();
             }, 400); // Matches CSS transition duration
-        });
+        }, { once: true });
+    } else {
+        window.addEventListener('load', startThreeBackground, { once: true });
+    }
+
+    const handleReducedMotionChange = (event) => {
+        if (event.matches) {
+            window.dispatchEvent(new CustomEvent('threefx:disable'));
+        }
+    };
+
+    if (reducedMotionQuery.addEventListener) {
+        reducedMotionQuery.addEventListener('change', handleReducedMotionChange);
+    } else {
+        reducedMotionQuery.addListener(handleReducedMotionChange);
     }
 });

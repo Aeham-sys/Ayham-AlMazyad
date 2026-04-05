@@ -108,6 +108,12 @@
     outline: none;
 }
 
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: var(--text-muted);
+    opacity: 0.85;
+}
+
 .input-group textarea {
     height: 150px;
     resize: vertical;
@@ -117,6 +123,11 @@
 .input-group textarea:focus {
     border-color: var(--accent-cyan);
     box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
+}
+
+.input-group input:invalid,
+.input-group textarea:invalid {
+    border-color: rgba(239, 68, 68, 0.45);
 }
 
 .input-group input:focus + .input-icon,
